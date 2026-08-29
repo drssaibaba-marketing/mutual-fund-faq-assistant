@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from datetime import datetime
 import time
-from mock_corpus import CORPUS_REGISTRY
+from corpus_registry import CORPUS_REGISTRY
 
 def scrape_url(url, default_content):
     """Scrapes the text content from the given URL. If blocked or error, fallback to verified default_content."""

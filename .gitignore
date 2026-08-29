@@ -24,7 +24,6 @@ chroma_db_v*/
 scratch/
 check_urls_2.py
 debug_nav.py
-mock_corpus.py
 test_queries.py
 test_urls.py
 validate_sources.py
