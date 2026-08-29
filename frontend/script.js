@@ -1,6 +1,6 @@
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
     ? 'http://127.0.0.1:8000/api/chat' 
-    : 'https://' + window.location.hostname.replace('frontend', 'backend') + '/api/chat'; // Change this placeholder with actual production backend URL once deployed on Railway
+    : 'https://mutual-fund-faq-assistant-production.up.railway.app/api/chat'; // Actual production backend URL
 
 // Configure marked.js options for security and styling
 marked.setOptions({
@@ -98,7 +98,7 @@ async function submitForm(e) {
 
         // Replace 'YOUR_RAILWAY_APP_URL_HERE' with your actual Railway app URL, e.g., 'https://rag-backend.up.railway.app/api/chat'
         const apiUrlToUse = (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') 
-            ? 'https://your-railway-app-url.up.railway.app/api/chat' // TO-DO: Update this after Railway deployment
+            ? 'https://mutual-fund-faq-assistant-production.up.railway.app/api/chat' // Updated with Railway deployment URL
             : 'http://127.0.0.1:8000/api/chat';
         
         const response = await fetch(apiUrlToUse, {
