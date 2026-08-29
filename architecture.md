@@ -2,14 +2,14 @@
 
 ## 1. High-Level Architecture Overview
 The system is built as a **Retrieval-Augmented Generation (RAG)** pipeline. It operates in two primary phases:
-1. **Data Ingestion (Offline):** Extracting, processing, embedding, and storing factual information from the provided Groww mutual fund URLs.
+1. **Data Ingestion (Offline):** Extracting, processing, embedding, and storing factual information from the provided HDFC, SEBI, and AMFI official mutual fund URLs.
 2. **Query Processing (Online):** Handling user queries, applying guardrails, retrieving relevant context, and generating a compliant, facts-only response.
 
 ```mermaid
 graph TD
     %% Data Ingestion Phase
     subgraph Data Ingestion Pipeline
-        A[Source URLs: Groww Mutual Fund Pages] --> B[Web Scraper / Document Loader]
+        A[Source URLs: Official AMC/SEBI/AMFI Pages] --> B[Web Scraper / Document Loader]
         B --> C[Text Splitter / Chunker]
         C --> D[Embedding Model]
         D --> E[(Vector Database)]
@@ -38,7 +38,7 @@ graph TD
 
 ### A. Data Ingestion Pipeline
 This pipeline runs periodically (e.g., daily or weekly) to ensure the data is up-to-date.
-* **Document Loaders:** Scrapes content directly from the curated list of Groww HDFC mutual fund URLs. Extracts text data and relevant fund details presented on the page.
+* **Document Loaders:** Scrapes content directly from the curated list of HDFC mutual fund, AMFI, and SEBI URLs. Extracts text data and relevant fund details presented on the page.
 * **Chunking Strategy:** Splits large documents into smaller, semantically meaningful chunks (e.g., 500-1000 tokens) with appropriate overlap to preserve context.
 * **Metadata Attachment:** Every chunk is tagged with crucial metadata:
   * `source_url`: The exact link where the information was found.
@@ -79,7 +79,7 @@ A minimalistic web interface (built with Streamlit, Gradio, or React) containing
 * **Orchestration Framework:** LangChain or LlamaIndex.
 * **Vector Database:** ChromaDB (local/lightweight) or Pinecone (managed).
 * **Embeddings:** OpenAI `text-embedding-3-small` or BGE-large-en.
-* **LLM:** Groq (e.g., `llama3-8b-8192` or `mixtral-8x7b-32768`) for fast, capable inference and formatting.
+* **LLM:** Groq (e.g., `qwen/qwen3.8-27b` or `llama3-70b-8192`) for fast, capable inference and formatting.
 
 ---
 

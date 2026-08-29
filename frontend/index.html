@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund FAQ Assistant</title>
+    <!-- Premium Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header-container">
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="header-icon">
+                <rect width="45" height="45" rx="10" fill="rgba(56, 189, 248, 0.1)"/>
+                <path d="M12 30L20 22L26 28L34 16" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28 16H34V22" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h1>Mutual Fund FAQ Assistant</h1>
+        </div>
+
+        <!-- Description -->
+        <div class="intro-text">
+            <p><strong>Disclaimer:</strong> <em><span style="color: #f87171;">Facts-only. No investment advice.</span></em></p>
+            <p>Welcome! I can answer factual questions about select HDFC Mutual Fund schemes. Please note that I cannot provide performance comparisons, recommendations, or financial advice.</p>
+        </div>
+
+        <!-- Example Questions -->
+        <div class="examples-section">
+            <h3>Example Questions</h3>
+            <div class="example-buttons">
+                <button class="example-btn" onclick="setQuery('What is the expense ratio for HDFC Mid-Cap Opportunities Fund?')">Expense ratio of Mid-Cap?</button>
+                <button class="example-btn" onclick="setQuery('What is the minimum SIP amount for HDFC ELSS Tax Saver Fund?')">Minimum SIP for Tax Saver?</button>
+                <button class="example-btn" onclick="setQuery('What is the exit load of HDFC Small Cap Fund?')">Exit load of Small Cap?</button>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div id="chat-container" class="chat-container">
+            <!-- Messages will be injected here -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <form id="chat-form" onsubmit="submitForm(event)">
+                <div class="input-wrapper">
+                    <input type="text" id="chat-input" placeholder="Ask a factual question about the mutual funds..." autocomplete="off">
+                    <button type="submit" id="send-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

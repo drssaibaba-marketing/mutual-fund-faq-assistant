@@ -9,9 +9,11 @@ The system must strictly avoid providing investment advice, opinions, or recomme
 
 ## Objective
 Design and implement a lightweight Retrieval-Augmented Generation (RAG)-based assistant that:
-* Answers factual queries about mutual fund schemes
-* Uses a curated corpus of official documents
+* Answers factual queries about mutual fund schemes supported by available data
+* Uses Groww purely as the selected product/reference context for the project
+* Uses a curated corpus of official documents (HDFC AMC, SEBI, AMFI) as the absolute sources of truth
 * Provides concise, source-backed responses
+* Cites exactly one official source containing/supporting the fact
 
 ---
 
@@ -26,26 +28,29 @@ Design and implement a lightweight Retrieval-Augmented Generation (RAG)-based as
 ### 1. Corpus Definition
 * Select one Asset Management Company (AMC)
 * Choose 3–5 mutual fund schemes, ensuring category diversity (e.g., large-cap, flexi-cap, ELSS)
-  * [HDFC Mid-Cap Opportunities Fund](https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth)
-  * [HDFC Small Cap Fund](https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth)
-  * [HDFC Gold ETF Fund of Fund](https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth)
-  * [HDFC Top 100 Fund (Large Cap)](https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth)
-  * [HDFC ELSS Tax Saver Fund](https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth)
+  * HDFC Mid-Cap Opportunities Fund
+  * HDFC Small Cap Fund
+  * HDFC Gold ETF Fund of Fund
+  * HDFC Top 100 Fund (Large Cap)
+  * HDFC ELSS Tax Saver Fund
 
 ### 2. FAQ Assistant Requirements
-The assistant must:
-* Answer facts-only queries, such as:
-  * Expense ratio of a scheme
-  * Exit load details
-  * Minimum SIP amount
-  * ELSS lock-in period
-  * Riskometer classification
-  * Benchmark index
-  * Process to download statements or capital gains reports
-* Ensure:
-  * Each response is limited to a maximum of 3 sentences
-  * Each response includes exactly one citation link
-  * Each response includes a footer: _“Last updated from sources: <date>”_
+The assistant must answer **any factual scheme-specific question supported by the approved corpus**. The following categories are mandatory acceptance tests, but they are NOT a whitelist:
+* Expense ratio of a scheme
+* Exit load details
+* Minimum SIP / investment amount
+* ELSS lock-in period
+* Riskometer classification
+* Benchmark index
+* Process to download statements or capital gains reports
+* NAV and AUM
+* Fund Manager and Investment Objective
+
+Ensure:
+* Each response is purely factual and limited to a maximum of 3 sentences
+* Each response includes exactly one clearly identified official source citation link
+* For dynamic facts (such as NAV), the date of the fact is identified in the response
+* Each response includes a footer: _“Last updated from sources: <date>”_
 
 ### 3. Refusal Handling
 The assistant must refuse non-factual or advisory queries, such as:
@@ -68,8 +73,10 @@ The solution should include a simple interface with:
 ## Constraints
 
 ### Data and Sources
-* Use only official public sources (AMC, AMFI, SEBI)
-* Do not use third-party blogs or aggregator websites
+* Groww is the selected product/reference context, but must NOT be used as an information source
+* HDFC AMC, AMFI, and SEBI must be the only authoritative sources
+* Do not use unrelated third-party websites
+* Never invent information (hallucinate)
 
 ### Privacy and Security
 * Do not collect, store, or process:
@@ -85,7 +92,8 @@ The solution should include a simple interface with:
 
 ### Transparency
 * Responses must be short, factual, and verifiable
-* Every answer must include a source link and last updated date
+* Every answer must include a single official source link
+* Dates must be specified for dynamic facts (like NAV)
 
 ---
 

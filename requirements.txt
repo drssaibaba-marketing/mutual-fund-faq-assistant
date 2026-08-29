@@ -7,3 +7,6 @@ streamlit
 beautifulsoup4
 requests
 python-dotenv
+fastapi
+uvicorn
+pydantic

@@ -18,3 +18,13 @@ __pycache__/
 
 # Vector database storage
 chroma_db/
+chroma_db_v*/
+
+# Scratch and debug files
+scratch/
+check_urls_2.py
+debug_nav.py
+mock_corpus.py
+test_queries.py
+test_urls.py
+validate_sources.py

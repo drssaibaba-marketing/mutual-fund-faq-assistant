@@ -4,7 +4,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from data_ingestion import load_and_chunk_data
 
 # Vector Database directory
-DB_DIR = "./chroma_db"
+DB_DIR = "./chroma_db_v8"
 
 # 3.1 Embedding Model Integration & 3.2 Vector DB Initialization
 def get_vector_store():

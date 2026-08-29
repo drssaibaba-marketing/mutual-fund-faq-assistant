@@ -7,15 +7,15 @@ REFUSAL_MESSAGE = (
 )
 
 # 5.3 Educational Redirection
-EDUCATIONAL_LINK = "\n\nFor educational resources on mutual fund investing, please visit AMFI: https://www.amfiindia.com/investor-corner"
+EDUCATIONAL_LINK = "\n\nFor educational resources on mutual fund investing, please visit AMFI: https://www.amfiindia.com/"
 
 # 5.1 Intent Classification
 # We use a lightweight rule-based (regex) approach for fast intent classification
 ADVISORY_PATTERNS = [
     r"should i invest",
     r"should i buy",
-    r"which (fund )?is better",
-    r"which (fund )?is best",
+    r"which .*is better",
+    r"which .*is best",
     r"recommend",
     r"advice",
     r"good investment",
