@@ -10,3 +10,5 @@ python-dotenv
 fastapi
 uvicorn
 pydantic
+sentence-transformers
+langchain-huggingface
