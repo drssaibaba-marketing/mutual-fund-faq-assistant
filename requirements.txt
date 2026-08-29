@@ -1,0 +1,9 @@
+langchain
+langchain-groq
+langchain-community
+llama-index
+chromadb
+streamlit
+beautifulsoup4
+requests
+python-dotenv
