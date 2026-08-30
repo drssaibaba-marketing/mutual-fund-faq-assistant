@@ -1,10 +1,14 @@
 # Mutual Fund FAQ Assistant
 
-A facts-only, RAG-based (Retrieval-Augmented Generation) Chatbot designed to answer objective, verifiable queries about specific HDFC Mutual Fund schemes. The assistant strictly adheres to factual responses based on official sources and gracefully refuses any requests for investment advice.
+A facts-only, RAG-based (Retrieval-Augmented Generation) Chatbot designed to answer objective, verifiable queries about specific HDFC Mutual Fund schemes. 
 
-## 🏢 Selected AMC & Schemes
+**Disclaimer:**
+> Facts-only. No investment advice.
 
-**Asset Management Company (AMC):** HDFC Mutual Fund
+## 🏢 Selected Product & AMC
+
+- **Selected Product:** Groww
+- **Selected AMC:** HDFC Mutual Fund
 
 **Selected Schemes:**
 1. HDFC Mid-Cap Opportunities Fund
@@ -13,15 +17,61 @@ A facts-only, RAG-based (Retrieval-Augmented Generation) Chatbot designed to ans
 4. HDFC Top 100 Fund (Large Cap)
 5. HDFC ELSS Tax Saver Fund
 
-*(Note: Groww is the selected product context, but all information is sourced exclusively from official HDFC, SEBI, and AMFI pages to ensure factual integrity).*
-
 ## 🏗️ Architecture Overview
 
-The project has been refactored into a separated Backend/Frontend architecture:
-1. **Frontend (Vanilla HTML/CSS/JS)**: A static frontend mirroring the premium dark mode UI, designed to be deployed instantly on Vercel.
+The project is built with a separated Backend/Frontend architecture:
+1. **Frontend (Vanilla HTML/CSS/JS)**: A static frontend mirroring the premium dark mode UI.
 2. **Backend (FastAPI)**: Serves the RAG logic via REST API, designed for deployment on platforms like Railway.
 3. **Data Ingestion & Vector Store**: Scrapes canonical text and stores embeddings locally in a `Chroma` database.
-4. **Guardrails & RAG Pipeline**: Ensures queries are strictly factual using `qwen/qwen3.8-27b` via Groq.
+4. **Guardrails & RAG Pipeline**: Ensures queries are strictly factual using LLM capabilities with stringent advisory guardrails.
+
+## 🌐 Public Deployed Prototype URL
+- **Backend API:** `https://mutual-fund-faq-assistant-production.up.railway.app/api/chat`
+*(Please deploy the `frontend/` statically on Vercel/Netlify or run locally via HTTP server as per instructions below)*
+
+## 📚 Source List
+The application exclusively utilizes the following 15 public URLs (Primary and Secondary sources verified for facts):
+
+**HDFC AMC (Primary Sources):**
+1. https://www.hdfcfund.com/explore/mutual-funds/hdfc-mid-cap-opportunities-fund
+2. https://www.hdfcfund.com/explore/mutual-funds/hdfc-small-cap-fund
+3. https://www.hdfcfund.com/explore/mutual-funds/hdfc-gold-etf-fund-of-fund
+4. https://www.hdfcfund.com/explore/mutual-funds/hdfc-top-100-fund
+5. https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver-fund
+
+**HDFC AMC (Secondary Sources):**
+6. https://www.hdfcfund.com/statutory-disclosure/nav-and-idcw
+7. https://www.hdfcfund.com/investor-services/download-statements/account-statement
+8. https://www.hdfcfund.com/investor-services/download-statements/capital-gains-statement
+9. https://www.hdfcfund.com/investor-services/kyc
+10. https://www.hdfcfund.com/about-us/corporate-governance
+11. https://www.hdfcfund.com/investor-services/downloads/forms
+
+**AMFI / SEBI (Secondary Sources):**
+12. https://www.amfiindia.com/
+13. https://investor.sebi.gov.in/
+14. https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doFaq=yes
+15. https://www.sebi.gov.in/legal/master-circulars/may-2023/master-circular-for-mutual-funds_71438.html
+
+## 💬 Sample Q&A
+
+**Q1: What is the expense ratio of HDFC Mid Cap Fund?**
+**A1:** The expense ratio for the HDFC Mid-Cap Opportunities Fund Direct plan is 0.85%. [Source](https://www.hdfcfund.com/explore/mutual-funds/hdfc-mid-cap-opportunities-fund/regular)
+
+**Q2: What is the lock-in period of HDFC ELSS Tax Saver Fund?**
+**A2:** The lock-in period for the HDFC ELSS Tax Saver Fund is 3 years. [Source](https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver-fund/regular)
+
+**Q3: How can I download my capital gains statement?**
+**A3:** To download your capital gains statement, visit the HDFC Mutual Fund website and enter your PAN and folio number under the 'Capital Gains Statement' section. You must then select the relevant financial year to generate the PDF. [Source](https://www.hdfcfund.com/investor-services/download-statements/capital-gains-statement)
+
+**Q4: Should I invest in HDFC Mid Cap Fund?**
+**A4:** I can only provide factual information about HDFC mutual funds based on approved sources. I cannot provide investment advice or recommendations.
+
+**Q5: What is the minimum SIP amount for HDFC Small Cap Fund?**
+**A5:** The minimum SIP amount for the HDFC Small Cap Fund is Rs. 100. [Source](https://www.hdfcfund.com/explore/mutual-funds/hdfc-small-cap-fund/regular)
+
+**Q6: What is the riskometer classification of HDFC Gold ETF Fund of Fund?**
+**A6:** The riskometer classification for HDFC Gold ETF Fund of Fund is High. [Source](https://www.hdfcfund.com/explore/mutual-funds/hdfc-gold-etf-fund-of-fund/regular)
 
 ## 🚀 Setup & Run Instructions
 
@@ -31,7 +81,7 @@ The project has been refactored into a separated Backend/Frontend architecture:
 
 ### 1. Clone the repository
 ```bash
-git clone <repository_url>
+git clone https://github.com/drssaibaba-marketing/mutual-fund-faq-assistant.git
 cd RAG_Chatbot_Project
 ```
 
