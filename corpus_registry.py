@@ -38,18 +38,18 @@ CORPUS_REGISTRY = [
         "content": "HDFC Small Cap Fund Direct Growth. Expense ratio is 0.74%. Minimum SIP amount is Rs. 100. Minimum investment is Rs 100. Exit load is 1% if redeemed within 1 year. Riskometer classification is Very High. Benchmark index is NIFTY Smallcap 250 TRI. The fund manager is Chirag Setalvad. The investment objective is to provide long-term capital appreciation by investing predominantly in Small-Cap companies. AUM is Rs. 28,000 Crores."
     },
     {
-        "url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-gold-etf-fund-of-fund",
-        "canonical_url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-gold-etf-fund-of-fund/regular",
+        "url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-gold-etf-fund-fund",
+        "canonical_url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-gold-etf-fund-fund/regular",
         "scheme_id": "hdfc_gold_etf",
         "source_type": "primary",
         "content": "HDFC Gold ETF Fund of Fund Direct Plan Growth. Expense ratio is 0.15%. Minimum SIP amount is Rs. 100. Exit load is nil. Riskometer classification is High. Benchmark index is Domestic Price of Physical Gold. Fund manager is Nirman Morakhia. Investment objective is to seek capital appreciation by investing in units of HDFC Gold ETF."
     },
     {
-        "url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-top-100-fund",
-        "canonical_url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-top-100-fund/regular",
+        "url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-large-cap-fund",
+        "canonical_url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-large-cap-fund/regular",
         "scheme_id": "hdfc_large_cap",
         "source_type": "primary",
-        "content": "HDFC Top 100 Fund Direct Growth (Large Cap). Expense ratio is 1.15%. Minimum SIP amount is Rs. 100. Exit load is 1% if redeemed within 1 year. Riskometer classification is Very High. Benchmark index is NIFTY 100 TRI. Fund manager is Rahul Baijal. Investment objective is to provide long-term capital appreciation by investing predominantly in Large-Cap companies."
+        "content": "HDFC Large Cap Fund Direct Growth. Expense ratio is 1.15%. Minimum SIP amount is Rs. 100. Exit load is 1% if redeemed within 1 year. Riskometer classification is Very High. Benchmark index is NIFTY 100 TRI. Fund manager is Rahul Baijal. Investment objective is to provide long-term capital appreciation by investing predominantly in Large-Cap companies."
     },
     {
         "url": "https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver-fund",
@@ -61,8 +61,8 @@ CORPUS_REGISTRY = [
 
     # --- DYNAMIC NAV SOURCE ---
     {
-        "url": "https://www.hdfcfund.com/statutory-disclosure/nav-and-idcw",
-        "canonical_url": "https://www.hdfcfund.com/statutory-disclosure/nav-and-idcw",
+        "url": "https://www.hdfcfund.com/nav-and-idcw",
+        "canonical_url": "https://www.hdfcfund.com/nav-and-idcw",
         "scheme_id": "general",
         "source_type": "secondary",
         "content": f"Official HDFC Mutual Fund NAVs as of {current_date}: HDFC Mid-Cap Opportunities Fund Direct Growth NAV is Rs. 152.00. HDFC Small Cap Fund Direct Growth NAV is Rs. 121.00. HDFC Gold ETF Fund of Fund Direct Plan Growth NAV is Rs. 55.20. HDFC Top 100 Fund Direct Growth NAV is Rs. 85.50. HDFC ELSS Tax Saver Fund Direct Plan Growth NAV is Rs. 110.25. (HDFC AMC Data)"
@@ -70,36 +70,36 @@ CORPUS_REGISTRY = [
 
     # --- GENERAL SECONDARY SOURCES ---
     {
-        "url": "https://www.hdfcfund.com/investor-services/download-statements/account-statement",
-        "canonical_url": "https://www.hdfcfund.com/investor-services/download-statements/account-statement",
+        "url": "https://www.hdfcfund.com/services/additional-info/request-statement",
+        "canonical_url": "https://www.hdfcfund.com/services/additional-info/request-statement",
         "scheme_id": "general",
         "source_type": "secondary",
         "content": "To download your mutual fund account statement, visit the HDFC Mutual Fund website, log in to the investor portal with your PAN and folio number, and navigate to the 'Download Statements' section."
     },
     {
-        "url": "https://www.hdfcfund.com/investor-services/download-statements/capital-gains-statement",
-        "canonical_url": "https://www.hdfcfund.com/investor-services/download-statements/capital-gains-statement",
+        "url": "https://www.hdfcfund.com/services/consolidated-account-statement",
+        "canonical_url": "https://www.hdfcfund.com/services/consolidated-account-statement",
         "scheme_id": "general",
         "source_type": "secondary",
         "content": "To download your capital gains statement, visit the HDFC Mutual Fund website, enter your PAN and folio number under the 'Capital Gains Statement' section, and select the relevant financial year to generate the PDF."
     },
     {
-        "url": "https://www.hdfcfund.com/investor-services/kyc",
-        "canonical_url": "https://www.hdfcfund.com/investor-services/kyc",
+        "url": "https://www.hdfcfund.com/services/kyc-redressal-complaints",
+        "canonical_url": "https://www.hdfcfund.com/services/kyc-redressal-complaints",
         "scheme_id": "general",
         "source_type": "secondary",
         "content": "KYC (Know Your Customer) is mandatory for all mutual fund investors. You can update your KYC details online through the HDFC Mutual Fund portal using your Aadhaar and PAN."
     },
     {
-        "url": "https://www.hdfcfund.com/about-us/corporate-governance",
-        "canonical_url": "https://www.hdfcfund.com/about-us/corporate-governance",
+        "url": "https://www.hdfcfund.com/about-us/corporate-governance/codes-policies",
+        "canonical_url": "https://www.hdfcfund.com/about-us/corporate-governance/codes-policies",
         "scheme_id": "general",
         "source_type": "secondary",
         "content": "HDFC Asset Management Company follows strict corporate governance policies as mandated by SEBI. Our board ensures transparency in all mutual fund operations."
     },
     {
-        "url": "https://www.hdfcfund.com/investor-services/downloads/forms",
-        "canonical_url": "https://www.hdfcfund.com/investor-services/downloads/forms",
+        "url": "https://www.hdfcfund.com/services/forms",
+        "canonical_url": "https://www.hdfcfund.com/services/forms",
         "scheme_id": "general",
         "source_type": "secondary",
         "content": "Download various forms like SIP mandate, common application form, and redemption request forms directly from the HDFC AMC Forms and Downloads section."
