@@ -126,6 +126,12 @@ python -m http.server 3000
 ```
 Then visit `http://localhost:3000` in your browser.
 
+## 🔄 Automated Knowledge Refresh
+
+The knowledge base is automatically refreshed every day at 10:00 AM IST using a GitHub Actions scheduler. The workflow runs the ingestion pipeline to fetch updated NAVs and documents, builds the new ChromaDB vector index, and pushes the updated index to the repository. This guarantees that the live deployed application always has the latest verified data without causing startup delays or facing WAF blocks during production operation.
+
+To run the refresh manually, you can trigger the **Daily RAG Knowledge Base Update** workflow via the GitHub Actions `workflow_dispatch` interface.
+
 ## ⚠️ Known Limitations
 - **Data Freshness**: The system relies on static scraping at the time of database initialization.
 - **Scraping Protections**: Official AMC websites (like HDFC) often have strict anti-bot measures returning 403 Forbidden. We simulate data ingestion using verified mock corpus.
